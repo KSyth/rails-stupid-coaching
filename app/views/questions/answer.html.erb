@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Answer</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/stylesheets/questions.scss">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Stupid coach</h1>
+      <div class="cards">
+        <div class="card">
+          <p><%= @answer %></p>
+          <p> -You </p>
+        </div>
+        <div class="card" id="coach">
+          <% if @answer.include? "?" %>
+
+          <p><solid><%= "Silly question !" %></solid></p>
+          <% elsif @answer == "I am going to work" %>
+          <p><solid><%= "Great!" %></solid></p>
+          <% else %>
+          <p><solid><%= "I don't care, get dressed and go to work!" %></solid></p>
+          <% end %>
+          <p> -Your Coach </p>
+        </div>
+      </div>
+      <%= link_to 'Ask a new question', 'ask' %>
+    </div>
+
+  </body>
+</html>
